@@ -3,6 +3,7 @@ package concurrency
 import (
 	"fmt"
 	"sync"
+	"sync/atomic"
 )
 
 type Counter struct {
@@ -26,6 +27,7 @@ func Count() {
 			}
 		}()
 	}
+	atomic.CompareAndSwapInt32()
 	// 等待10个goroutine完成
 	wg.Wait()
 	fmt.Println(count)
