@@ -61,7 +61,7 @@
   - Go race detector 基于Google 的C/C++sanitizers技术实现，编译器通过探测所有的内存访问，在代码运行的时候，race detector 就能监控到对共享变量的非同步访问，出现race的时候，就会打印出警告信息。
 ### Mutex 嵌入到其它 struct 中使用
 ```
-type Counter struct {
+type RWCounter struct {
     mu    sync.Mutex
     Count uint64
 }
