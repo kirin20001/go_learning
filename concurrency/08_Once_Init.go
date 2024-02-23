@@ -1,0 +1,35 @@
+package concurrency
+
+import (
+"fmt"
+	"net"
+	"sync"
+)
+
+func onceInit() {
+	var once sync.Once
+
+	// 第一个初始化函数
+	f1 := func() {
+		fmt.Println("in f1")
+	}
+	once.Do(f1) // 打印出 in f1
+
+	// 第二个初始化函数
+	f2 := func() {
+		fmt.Println("in f2")
+	}
+	once.Do(f2) // 无输出
+}
+
+var addr = "baidu.com"
+
+var conn net.Conn
+var err error
+
+func onceInit2() {
+	var once sync.Once
+	once.Do(func() {
+		conn, err = net.Dial("tcp", addr)
+	})
+}
