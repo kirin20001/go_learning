@@ -29,7 +29,6 @@ var err error
 
 func onceInit2() {
 	var once sync.Once
-	var sm sync.Map
 	once.Do(func() {
 		conn, err = net.Dial("tcp", addr)
 	})
