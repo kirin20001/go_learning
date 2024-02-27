@@ -2,6 +2,7 @@ package concurrency
 
 import (
 	"context"
+	"fmt"
 	"net/http"
 )
 
@@ -33,7 +34,7 @@ func GetRequestID(ctx context.Context) string {
 func Handle(rw http.ResponseWriter, req *http.Request) {
 	// 拿到 reqId，后面可以记录日志等等
 	reqID := GetRequestID(req.Context())
-	...
+	fmt.Println(reqID)
 }
 
 func contextHttp() {
