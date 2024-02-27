@@ -5,11 +5,6 @@ import (
 	"unsafe"
 )
 
-package queue
-import (
-"sync/atomic"
-"unsafe"
-)
 // lock-free的queue
 type LKQueue struct {
 	head unsafe.Pointer
