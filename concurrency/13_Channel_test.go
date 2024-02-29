@@ -1,6 +1,8 @@
 package concurrency
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestChannel2(t *testing.T) {
 	channel2()

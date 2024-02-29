@@ -17,3 +17,7 @@ func TestRecursiveMutex(t *testing.T) {
 func TestDeadLockScenario(t *testing.T) {
 	deadLockScenario()
 }
+
+func TestUnlock1(t *testing.T) {
+	unlock1()
+}

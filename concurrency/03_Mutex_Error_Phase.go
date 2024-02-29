@@ -44,3 +44,10 @@ func bar(l sync.Locker) {
 	fmt.Println("in bar")
 	l.Unlock()
 }
+
+func unlock1() {
+	var mu sync.Mutex
+	mu.Lock()
+	mu.Unlock()
+	mu.Unlock()
+}
