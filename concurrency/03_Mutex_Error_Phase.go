@@ -27,6 +27,8 @@ func foo(c Counter) {
 
 func mutexMultiLock() {
 	l := &sync.Mutex{}
+	l.Lock()
+	l.Lock()
 	foo1(l)
 }
 
